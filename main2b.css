@@ -1,0 +1,597 @@
+
+/*Left slide out menu code*/
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+.menu, .menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    z-index:10;  
+    overflow:hidden;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+}
+.menu li a{
+  display: block;
+  text-indent: -500em;
+  height: 5em;
+  width: 5em;
+  line-height: 5em;
+  text-align:center;
+  color: #72739f;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.1s ease-in-out;
+}
+.menu li a:before {
+  font-family: FontAwesome;
+  speak: none;
+  text-indent: 0em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4em;
+}
+.menu li a.search:before {
+  content: "\f002";
+}
+.menu li a.archive:before {
+  content: "\f187";
+}
+.menu li a.pencil:before {
+  content: "\f040";
+}
+.menu li a.contact:before {
+  content: "\f003";
+}
+.menu li a.about:before {
+  content: "\f007";
+}
+.menu li a.home:before {
+  content: "\f039";
+}
+.menu-bar li a:hover,
+.menu li a:hover,
+.menu li:first-child a {
+  background: #267fdd;
+  color: #fff;
+}
+.menu-bar{
+    overflow:hidden;
+    left:5em;
+    z-index:5;
+    width:0;
+    height:0;
+    transition: all 0.1s ease-in-out;
+}
+.menu-bar li a{
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  text-align:center;
+  color: #72739f;
+  text-decoration:none;  
+  position: relative;
+  font-family:verdana;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.1s ease-in-out;
+}
+.menu-bar li:first-child a{
+    height:5em;
+    background: #267fdd;
+    color: #fff;    
+    line-height:5
+}
+
+
+.para{
+    color:#033f72;
+    padding-left:100px;
+    font-size:3em;
+    margin-bottom:20px;
+}
+
+.open{
+    width:10em;
+    height:100%;
+}
+
+@media all and (max-width: 500px) {
+    .container{
+        margin-top:100px;
+    }
+    .menu{
+        height:5em;
+        width:100%;
+    }
+    .menu li{
+        display:inline-block;
+        float:left;
+    }
+    .menu-bar li a{
+        width:100%;
+    }
+    .menu-bar{
+        width:100%;
+        left:0;
+        height:0;
+    }
+    .open{
+        width:100%;
+        height:auto;
+    }
+    .para{
+    padding-left:5px;
+}  
+}
+@media screen and (max-height: 34em){
+  .menu li,
+  .menu-bar {
+    font-size:70%;
+  }
+}
+@media screen and (max-height: 34em) and (max-width: 500px){
+  .menu{
+        height:3.5em;
+    }
+}
+
+
+body{
+
+	background:#224D6F;
+  font-family: 'Quattrocento', serif;
+}
+
+#main-area{
+
+    width: 1333px;
+    height: 900px;
+    margin-left: 284px;
+    background-color: #fff;
+
+}
+
+
+#topnav-wrapper{
+	width:1150px;
+	margin-left: 336px;
+  overflow:hidden;
+
+}
+
+
+
+
+/*Top Nav Icon Slider*/
+
+
+#sliderWrapper {
+    left: 60px;
+    width: 1000px;
+    white-space: nowrap !important;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#next {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+#prev {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+#imageSlider {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+#property-area{
+background:#a17172;
+width: 391px;
+height: 900px;
+float:right;
+
+}
+
+
+.bar{
+  background-color:#5c9bb7;
+
+  background-image: -webkit-linear-gradient(top, #eff4ee, #bdd9f4);
+  background-image: -webkit-linear-gradient(top, #eff4ee, #bdd9f4);
+  background-image:-moz-linear-gradient(top, #5c9bb7, #5392ad);
+  background-image:linear-gradient(top, #5c9bb7, #5392ad);
+
+  box-shadow: 0 1px 1px #ccc;
+  border-radius: 2px;
+  width: 350px;
+  padding: 10px;  
+  margin: 45px auto 20px;
+  position:relative;
+}
+
+.bar input{
+  background:#fff no-repeat 13px 13px;
+  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU5NEY0RTlFMTA4NzExRTM5RTEzQkFBQzMyRjkyQzVBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU5NEY0RTlGMTA4NzExRTM5RTEzQkFBQzMyRjkyQzVBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTk0RjRFOUMxMDg3MTFFMzlFMTNCQUFDMzJGOTJDNUEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTk0RjRFOUQxMDg3MTFFMzlFMTNCQUFDMzJGOTJDNUEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4DjA/RAAABK0lEQVR42pTSQUdEURjG8dOY0TqmPkGmRcqYD9CmzZAWJRHVRIa0iFYtM6uofYaiEW2SRJtEi9YxIklp07ZkWswu0v/wnByve7vm5ee8M+85zz1jbt9Os+WiGkYdYxjCOx5wgFeXUHmtBSzpcCGa+5BJTCjEP+0nKWAT8xqe4ArPGEEVC1hHEbs2oBwdXkM7mj/JLZrad437sCGHOfUtcziutuYu2v8XUFF/4f6vMK/YgAH1HxkBYV60AR31gxkBYd6xAeF3VzMCwvzOBpypX8V4yuFRzX2d2gD/l5yjH4fYQEnzkj4fae5rJulF2sMXVrAsaTWttRFu4Osb+1jEDT71/ZveyhouTch2fINQL9hKefKjuYFfuznXWzXMTabyrvfyIV3M4vhXgAEAUMs7K0J9UJAAAAAASUVORK5CYII=);
+
+  border: none;
+  width: 100%;
+  line-height: 19px;
+  padding: 11px 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px #c4c4c4 inset;
+  text-align: left;
+  font-size: 14px;
+  font-family: inherit;
+  color: #738289;
+  font-weight: bold;
+  outline: none;
+  text-indent: 40px;
+}
+
+#ang ul{
+  list-style: none;
+  width: 328px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#ang ul li{
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  overflow: hidden;
+}
+
+#ang ul li img{
+  width:60px;
+  height:60px;
+  float:left;
+  border:none;
+  margin-top: 40px;
+  margin-right: 5px;
+
+}
+
+#ang ul li p{
+  font-weight: bold;
+  padding-top: 12px;
+  color: #fff;
+    font-size: 20px;
+    height: 3px;
+    width: 278px;
+}
+
+#ang ul li a{
+  text-decoration:none;
+}
+
+
+#houses { 
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 12px;
+    border: 2px solid #e1a266;
+    width: 361px;
+    margin-left: 12px;
+    height: 725px;
+}
+
+::-webkit-scrollbar-track {
+      background-color: #b46868;
+} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2); 
+} /* this will style the thumb, ignoring the track */
+ 
+::-webkit-scrollbar-button {
+      background-color: #7c2929;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+::-webkit-scrollbar-corner {
+      background-color: black;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+.jspTrack
+{
+    background: #b46868; /* changed from #dde */
+    position: relative;
+}
+ 
+.jspDrag
+{
+    background: rgba(0,0,0,0.2); /* changed from #bbd */
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+ #logged-name{  
+    float: right;
+    margin-right: 71px;
+    margin-top: 10px;
+    color: #debb99;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+
+  #logged-icon{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+
+  }
+
+  #caret-icon {
+    position: relative;
+    left: 331px;
+    top: 17px;
+}
+
+
+aside {
+  position: absolute;
+  left: 43px;
+  top: 599px;
+  /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+    width: 307px;
+    height: 200px;
+    background: rgb(72, 114, 82);
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 4px;
+    padding: 8px;
+
+
+}
+
+.move-icon-wrapper{
+
+  background: url('images/move.png'); 
+    width: 29px;
+    float: right;
+    height: 23px;
+}
+
+
+
+.property-dragme {
+    left: 430px;
+    top: 593px;
+}
+
+.title-tab {
+    width: 268px;
+    height: 34px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+body, html {
+  min-height: 100vh;
+}
+
+
+.input {
+    height: 24px;
+    width: 260px;
+    padding: 3px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    border: none;
+    background: #7b8086;
+    color:#fff;
+}
+
+label.label {
+    color: #fff;
+}
+
+#draggable { 
+  width: 150px; 
+  height: 150px; 
+  padding: 0.5em; 
+
+
+}
+
+#notes {
+    background: #7b8086;
+}
+
+#table-wrapper{
+ 
+    width: 846px;
+    height: 411px;
+    float: left;
+    margin: 5px;
+    padding: 36px;
+    color: #fff;
+    background: #267fdd;
+    border: solid 2px #27276d;
+}
+
+td{
+
+color:#000;
+
+}
+
+
+label {
+    color: #fff;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Dropdown Button */
+
+   .dropbtn {
+    background-color: #a17172;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #267fdd;
+    z-index: 9999;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #fff;
+    font-size:16px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #debb99}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+#rightmenu {
+    position: fixed;
+    right: 0;
+    height: 1102px;
+    top: -4%;
+    width: 11em;
+    z-index: 5;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    text-align: left;
+    border-right: none;
+    padding: 0.5em 0.5em 0.5em 2.5em;
+   
+}
+
+
+
+
+
+
+
+.accordion {
+    margin-top: 50px;
+    background-color: #487252;
+    width: 198px;
+    border: solid 1px #fff;
+}
+
+  .accordion  dt, dd {
+      padding: 10px;
+      border-bottom: 0; 
+}
+
+
+      
+.accordion &:last-of-type {
+        border-bottom: 1px solid black; 
+      }
+
+
+
+.accordion  a {
+        display: block;
+        color: #fff;
+        font-weight: bold;
+        font-size:20px;
+        text-decoration:none;
+        border-bottom: solid 1px #e6d2d2;
+      }
+
+
+
+
+ .accordion  dd {
+     border-top: 0; 
+     font-size: 14px;
+}
+
+
+  .accordion  dd  &:last-of-type {
+       border-top: 1px solid white;
+       position: relative;
+       top: -1px;
+     }
+
+#example a:link, #example a:visited {
+      color: #dcc3c3;
+    display: block;
+    border-bottom: 1px solid #7b8086;
+    text-decoration: none;
+}
+
+.links {
+  float:left;
+  width:615px;
+  margin:0;
+  padding:0;
+}
+
+.links ul {
+  margin:0;
+  padding:0;
+ list-style-type:none;
+  
+}
+#example .links li {
+    float:left; 
+    margin 0 20px 0 0; 
+    width:185px;
+}
+
+
+#example .links li:nth-last-child(2),
+#example .links li:nth-last-child(3),
+#example .links li:nth-last-child(2) a,
+#example .links li:nth-last-child(3) a, 
+#example li:last-child, 
+#example li:last-child a {
+    border: 0;
+}
