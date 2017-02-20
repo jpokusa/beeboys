@@ -15,17 +15,7 @@
     overflow:hidden;
     box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
 }
-.menu li a{
-  display: block;
-  text-indent: -500em;
-  height: 5em;
-  width: 5em;
-  line-height: 5em;
-  text-align:center;
-  color: #72739f;
-  position: relative;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  transition: background 0.1s ease-in-out;
+
 }
 .menu li a:before {
   font-family: FontAwesome;
@@ -36,7 +26,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 1.4em;
+  font-size: 1.7em;
 }
 .menu li a.search:before {
   content: "\f002";
